@@ -1,0 +1,26 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Majo no Tabitabi</title>
+        <link>http://allforest01.github.io/</link>
+        <description>お元気ですか？</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>allforest01@gmail.com (allforest01)</managingEditor>
+            <webMaster>allforest01@gmail.com (allforest01)</webMaster><lastBuildDate>Mon, 31 Jul 2023 23:06:36 &#43;0700</lastBuildDate>
+            <atom:link href="http://allforest01.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>[dreamhack.io] Reversing Basic Challenges</title>
+    <link>http://allforest01.github.io/dreamhack-rev-basic/</link>
+    <pubDate>Mon, 31 Jul 2023 23:06:36 &#43;0700</pubDate>
+    <author>allforest01</author>
+    <guid>http://allforest01.github.io/dreamhack-rev-basic/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>This is my first post on my first blog</title>
+    <link>http://allforest01.github.io/first_post/</link>
+    <pubDate>Mon, 31 Jul 2023 16:56:43 &#43;0700</pubDate>
+    <author>allforest01</author>
+    <guid>http://allforest01.github.io/first_post/</guid>
+    <description><![CDATA[ 1 print(&#39;Nothing here...&#39;) ]]></description>
+</item>
+</channel>
+</rss>
