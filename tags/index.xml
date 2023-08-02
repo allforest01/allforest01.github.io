@@ -4,12 +4,28 @@
         <link>http://allforest01.github.io/tags/</link>
         <description>Tags - Tag - Majo no Tabitabi</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>allforest01@gmail.com (allforest01)</managingEditor>
-            <webMaster>allforest01@gmail.com (allforest01)</webMaster><lastBuildDate>Mon, 31 Jul 2023 23:06:36 &#43;0700</lastBuildDate><atom:link href="http://allforest01.github.io/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>rev</title>
-    <link>http://allforest01.github.io/tags/rev/</link>
+            <webMaster>allforest01@gmail.com (allforest01)</webMaster><lastBuildDate>Wed, 02 Aug 2023 01:20:06 &#43;0700</lastBuildDate><atom:link href="http://allforest01.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>learning</title>
+    <link>http://allforest01.github.io/tags/learning/</link>
+    <pubDate>Wed, 02 Aug 2023 01:20:06 &#43;0700</pubDate>
+    <author>allforest01</author>
+    <guid>http://allforest01.github.io/tags/learning/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>reversing</title>
+    <link>http://allforest01.github.io/tags/reversing/</link>
     <pubDate>Mon, 31 Jul 2023 23:06:36 &#43;0700</pubDate>
     <author>allforest01</author>
-    <guid>http://allforest01.github.io/tags/rev/</guid>
+    <guid>http://allforest01.github.io/tags/reversing/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>misc</title>
+    <link>http://allforest01.github.io/tags/misc/</link>
+    <pubDate>Mon, 31 Jul 2023 16:56:43 &#43;0700</pubDate>
+    <author>allforest01</author>
+    <guid>http://allforest01.github.io/tags/misc/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

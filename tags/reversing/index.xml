@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>reversing - Tag - Majo no Tabitabi</title>
+        <link>http://allforest01.github.io/tags/reversing/</link>
+        <description>reversing - Tag - Majo no Tabitabi</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>allforest01@gmail.com (allforest01)</managingEditor>
+            <webMaster>allforest01@gmail.com (allforest01)</webMaster><lastBuildDate>Mon, 31 Jul 2023 23:06:36 &#43;0700</lastBuildDate><atom:link href="http://allforest01.github.io/tags/reversing/" rel="self" type="application/rss+xml" /><item>
+    <title>[dreamhack.io] Basic Reversing Challenges</title>
+    <link>http://allforest01.github.io/dreamhack-basic-rev/</link>
+    <pubDate>Mon, 31 Jul 2023 23:06:36 &#43;0700</pubDate>
+    <author>allforest01</author>
+    <guid>http://allforest01.github.io/dreamhack-basic-rev/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

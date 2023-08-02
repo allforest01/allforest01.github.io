@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Learning z3 with me - Majo no Tabitabi</title><meta name="Description" content="お元気ですか？"><meta property="og:title" content="Learning z3 with me" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://allforest01.github.io/learning-z3-with-me/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-02T01:20:06+07:00" />
+<meta property="article:modified_time" content="2023-08-02T02:39:00+07:00" /><meta property="og:site_name" content="魔女の旅々" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Learning z3 with me"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="魔女の旅々">
+<meta name="apple-mobile-web-app-title" content="魔女の旅々"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://allforest01.github.io/learning-z3-with-me/" /><link rel="prev" href="http://allforest01.github.io/dreamhack-basic-rev/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Learning z3 with me",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/allforest01.github.io\/learning-z3-with-me\/"
+        },"genre": "posts","keywords": "learning","wordcount":  1193 ,
+        "url": "http:\/\/allforest01.github.io\/learning-z3-with-me\/","datePublished": "2023-08-02T01:20:06+07:00","dateModified": "2023-08-02T02:39:00+07:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "allforest01"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Majo no Tabitabi">魔女の旅々</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> ./posts </a><a class="menu-item" href="/tags/"> ./tags </a><a class="menu-item" href="/about/"> ./about_me </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Majo no Tabitabi">魔女の旅々</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">./posts</a><a class="menu-item" href="/tags/" title="">./tags</a><a class="menu-item" href="/about/" title="">./about_me</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Learning z3 with me</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>allforest01</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-08-02">2023-08-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1193 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-z3">What is z3</a></li>
+    <li><a href="#an-easy-examples">An easy examples</a></li>
+    <li><a href="#apply-it-to-a-ctf-task">Apply it to a CTF Task</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>Quote<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">z3 seem like magic to me. The harder it is, the more I want to learn it.</div>
+        </div>
+    </div>
+<h2 id="what-is-z3">What is z3</h2>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">&ldquo;Z3 is an efficient Satisfiability Modulo Theories (SMT) solver from Microsoft Research. Z3 is a solver for symbolic logic, a foundation for many software engineering tools. SMT solvers rely on a tight integration of specialized engines of proof. Each engine owns a piece of the global puzzle and implements specialized algorithms.&rdquo;</div>
+        </div>
+    </div>
+<h2 id="an-easy-examples">An easy examples</h2>
+<p>Suppose I have this crack-me, and you want to crack it. How can you do that?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">long</span> <span class="kt">long</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;num = &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">digitSum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">digitSum</span> <span class="o">+=</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">num</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">len</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">len</span> <span class="o">==</span> <span class="mi">17</span> <span class="o">&amp;&amp;</span> <span class="n">digitSum</span> <span class="o">==</span> <span class="mi">123</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">puts</span><span class="p">(</span><span class="s">&#34;Correct!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">puts</span><span class="p">(</span><span class="s">&#34;Wrong!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The condition are straightforward, so you can break it through manual condition.<br>
+However, let&rsquo;s use this as a starting example. You can solve it using z3, like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Import the z3 library</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Optimize API provides methods for solving using</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># objective functions and weighted soft constraints</span>
+</span></span><span class="line"><span class="cl"><span class="n">opt</span> <span class="o">=</span> <span class="n">Optimize</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Given the condition from line 17 of the code above we know that `len` = 17</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># The list `digits` will store all the num_{i} for i in [0, 17)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># where num_{i} represents the i-th digit of `num`</span>
+</span></span><span class="line"><span class="cl"><span class="n">digits</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Loop through all digits</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">17</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Create the lable num_{i} with an integer type</span>
+</span></span><span class="line"><span class="cl">    <span class="n">num_i</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;num_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Add conditions for this lable</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Each digit will have value in [0, 9]</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># except the first one, which will have a value in (0, 9]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">opt</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">num_i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">opt</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">num_i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">opt</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">num_i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Save the lable to the list</span>
+</span></span><span class="line"><span class="cl">    <span class="n">digits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num_i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create the label digitSum, which equal the sum of all digits</span>
+</span></span><span class="line"><span class="cl"><span class="n">digitSum</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;digitSum&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">opt</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">digitSum</span> <span class="o">==</span> <span class="nb">sum</span><span class="p">(</span><span class="n">digits</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Add the condition digitSum == 123, as we decuded from the code above</span>
+</span></span><span class="line"><span class="cl"><span class="n">opt</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">digitSum</span> <span class="o">==</span> <span class="mi">123</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Check if a model that satisfies the condition is solvable</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">opt</span><span class="o">.</span><span class="n">check</span><span class="p">()</span> <span class="o">==</span> <span class="n">sat</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Print the answer from the model</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Answer:&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="n">model</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">as_long</span><span class="p">()</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">digits</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># When there is no answer</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No answer!&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Upon running the script, you&rsquo;ll obtain the answer:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Answer: <span class="m">99996999999199800</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Testing this with the crack-me:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">num</span> <span class="o">=</span> <span class="m">99996999999199800</span>
+</span></span><span class="line"><span class="cl">Correct!
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="apply-it-to-a-ctf-task">Apply it to a CTF Task</h2>
+<p>Now let&rsquo;s solve the <code>collision</code> task on pwnable.kr.<br>
+I initially solved it through manual calculation, but now let&rsquo;s have some fun with z3.</p>
+<p>The problem statement:</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Daddy told me about cool MD5 hash collision today.<br>
+I wanna do something like that too!</p>
+<p>ssh <a href="mailto:col@pwnable.kr" rel="">col@pwnable.kr</a> -p2222 (pw:guest)</p>
+</div>
+        </div>
+    </div>
+<p>Okay let&rsquo;s connect to the server and retrive the source code:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">allforest01@Kiese ~ » <span class="o">(</span>base<span class="o">)</span> ssh col@pwnable.kr -p2222
+</span></span><span class="line"><span class="cl">col@pwnable.kr<span class="s1">&#39;s password:
+</span></span></span><span class="line"><span class="cl"><span class="s1"> ____  __    __  ____    ____  ____   _        ___      __  _  ____
+</span></span></span><span class="line"><span class="cl"><span class="s1">|    \|  |__|  ||    \  /    ||    \ | |      /  _]    |  |/ ]|    \
+</span></span></span><span class="line"><span class="cl"><span class="s1">|  o  )  |  |  ||  _  ||  o  ||  o  )| |     /  [_     |  &#39;</span> / <span class="p">|</span>  D  <span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>   _/<span class="p">|</span>  <span class="p">|</span>  <span class="p">|</span>  <span class="o">||</span>  <span class="p">|</span>  <span class="o">||</span>     <span class="o">||</span>     <span class="o">||</span> <span class="p">|</span>___ <span class="p">|</span>    _<span class="o">]</span>    <span class="p">|</span>    <span class="se">\ </span><span class="p">|</span>    /
+</span></span><span class="line"><span class="cl"><span class="p">|</span>  <span class="p">|</span>  <span class="p">|</span>  <span class="sb">`</span>  <span class="err">&#39;</span>  <span class="o">||</span>  <span class="p">|</span>  <span class="o">||</span>  _  <span class="o">||</span>  O  <span class="o">||</span>     <span class="o">||</span>   <span class="o">[</span>_  __ <span class="p">|</span>     <span class="se">\|</span>    <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="p">|</span>  <span class="p">|</span>   <span class="se">\ </span>     / <span class="p">|</span>  <span class="p">|</span>  <span class="o">||</span>  <span class="p">|</span>  <span class="o">||</span>     <span class="o">||</span>     <span class="o">||</span>     <span class="o">||</span>  <span class="o">||</span>  .  <span class="o">||</span>  .  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="p">|</span>__<span class="p">|</span>    <span class="se">\_</span>/<span class="se">\_</span>/  <span class="p">|</span>__<span class="p">|</span>__<span class="o">||</span>__<span class="p">|</span>__<span class="o">||</span>_____<span class="o">||</span>_____<span class="o">||</span>_____<span class="o">||</span>__<span class="o">||</span>__<span class="p">|</span><span class="se">\_</span><span class="o">||</span>__<span class="p">|</span><span class="se">\_</span><span class="p">|</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">- Site admin : daehee87@khu.ac.kr
+</span></span><span class="line"><span class="cl">- irc.netgarage.org:6667 / <span class="c1">#pwnable.kr</span>
+</span></span><span class="line"><span class="cl">- Simply <span class="nb">type</span> <span class="s2">&#34;irssi&#34;</span> <span class="nb">command</span> to join IRC now
+</span></span><span class="line"><span class="cl">- files under /tmp can be erased anytime. make your directory under /tmp
+</span></span><span class="line"><span class="cl">- to use peda, issue <span class="sb">`</span><span class="nb">source</span> /usr/share/peda/peda.py<span class="sb">`</span> in gdb terminal
+</span></span><span class="line"><span class="cl">You have mail.
+</span></span><span class="line"><span class="cl">Last login: Wed Aug  <span class="m">2</span> 09:51:46 <span class="m">2023</span> from 171.225.250.124
+</span></span><span class="line"><span class="cl">col@pwnable:~$ ls
+</span></span><span class="line"><span class="cl">col  col.c  flag
+</span></span><span class="line"><span class="cl">col@pwnable:~$ cat col.c
+</span></span><span class="line"><span class="cl"><span class="c1">#include &lt;stdio.h&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#include &lt;string.h&gt;</span>
+</span></span><span class="line"><span class="cl">unsigned long <span class="nv">hashcode</span> <span class="o">=</span> 0x21DD09EC<span class="p">;</span>
+</span></span><span class="line"><span class="cl">unsigned long check_password<span class="o">(</span>const char* p<span class="o">){</span>
+</span></span><span class="line"><span class="cl">	int* <span class="nv">ip</span> <span class="o">=</span> <span class="o">(</span>int*<span class="o">)</span>p<span class="p">;</span>
+</span></span><span class="line"><span class="cl">	int i<span class="p">;</span>
+</span></span><span class="line"><span class="cl">	int <span class="nv">res</span><span class="o">=</span>0<span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="o">(</span><span class="nv">i</span><span class="o">=</span>0<span class="p">;</span> i&lt;5<span class="p">;</span> i++<span class="o">){</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">res</span> <span class="o">+=</span> ip<span class="o">[</span>i<span class="o">]</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> res<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">int main<span class="o">(</span>int argc, char* argv<span class="o">[]){</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="o">(</span>argc&lt;2<span class="o">){</span>
+</span></span><span class="line"><span class="cl">		printf<span class="o">(</span><span class="s2">&#34;usage : %s [passcode]\n&#34;</span>, argv<span class="o">[</span>0<span class="o">])</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> 0<span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="o">(</span>strlen<span class="o">(</span>argv<span class="o">[</span>1<span class="o">])</span> !<span class="o">=</span> 20<span class="o">){</span>
+</span></span><span class="line"><span class="cl">		printf<span class="o">(</span><span class="s2">&#34;passcode length should be 20 bytes\n&#34;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> 0<span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="o">(</span><span class="nv">hashcode</span> <span class="o">==</span> check_password<span class="o">(</span> argv<span class="o">[</span>1<span class="o">]</span> <span class="o">)){</span>
+</span></span><span class="line"><span class="cl">		system<span class="o">(</span><span class="s2">&#34;/bin/cat flag&#34;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> 0<span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		printf<span class="o">(</span><span class="s2">&#34;wrong passcode.\n&#34;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> 0<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">col@pwnable:~$ _
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We will focus on this section of the source code:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">hashcode</span> <span class="o">=</span> <span class="mh">0x21DD09EC</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">long</span> <span class="nf">check_password</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">p</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span><span class="o">*</span> <span class="n">ip</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">res</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="n">res</span> <span class="o">+=</span> <span class="n">ip</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This function converts <code>char*</code> to <code>int*</code>, requiring us to convert 4-byte chars to int when calculating.<br>
+And yeah this problem bears resemblance to the one we disscussed earlier. Let&rsquo;s use z3 to compute the password.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># This function converts 4 consecutive bytes to an int</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">four_char_to_int</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># The arr must be 4 bytes in length</span>
+</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Just perform a base conversion</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ret</span> <span class="o">=</span> <span class="n">ret</span> <span class="o">*</span> <span class="mi">256</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ret</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">opt</span> <span class="o">=</span> <span class="n">Optimize</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># This list stores the resulting lables</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">char_i</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;char_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Character condition</span>
+</span></span><span class="line"><span class="cl">    <span class="n">opt</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">char_i</span> <span class="o">&gt;=</span> <span class="mh">0x20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">opt</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">char_i</span>  <span class="o">&lt;</span> <span class="mh">0x7f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char_i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># This list stores all the converted numbers</span>
+</span></span><span class="line"><span class="cl"><span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Convert 4 consecutive bytes to an int</span>
+</span></span><span class="line"><span class="cl">    <span class="n">number</span> <span class="o">=</span> <span class="n">four_char_to_int</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">4</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mySum</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;mySum&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Attention: Integer overflow !!!</span>
+</span></span><span class="line"><span class="cl"><span class="n">opt</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mySum</span> <span class="o">==</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">%</span> <span class="mh">0x100000000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Add the task condition</span>
+</span></span><span class="line"><span class="cl"><span class="n">opt</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">mySum</span> <span class="o">==</span> <span class="mh">0x21DD09EC</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">opt</span><span class="o">.</span><span class="n">check</span><span class="p">()</span> <span class="o">==</span> <span class="n">sat</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Password:&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="n">model</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">as_long</span><span class="p">())</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">result</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No answer!&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Upon running this script, you&rsquo;ll get the password:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Password: ex<span class="p">;</span>oYe~q&lt;8<span class="o">[</span>tt<span class="o">{</span>Jp~x<span class="o">}</span><span class="se">\
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now, let&rsquo;s retrive the flag using this password:</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">You will need to replace <code>;</code>, <code>&lt;</code>, <code>\</code> with <code>\;</code>, <code>\&lt;</code>, <code>\\</code>.</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">col@pwnable:~$ ./col ex<span class="se">\;</span>oYe~q<span class="se">\&lt;</span>8<span class="o">[</span>tt<span class="o">{</span>Jp~x<span class="o">}</span><span class="se">\\</span>
+</span></span><span class="line"><span class="cl">daddy! I just managed to create a <span class="nb">hash</span> collision :<span class="o">)</span>
+</span></span><span class="line"><span class="cl">col@pwnable:~$ _
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>[This posts is currently being updated&hellip;]</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-08-02</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/learning-z3-with-me/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/learning/">learning</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/dreamhack-basic-rev/" class="prev" rel="prev" title="[dreamhack.io] Basic Reversing Challenges"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>[dreamhack.io] Basic Reversing Challenges</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.115.4">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">allforest01</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
