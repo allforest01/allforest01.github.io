@@ -4,9 +4,33 @@
         <link>http://allforest01.github.io/</link>
         <description>お元気ですか？</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>allforest01@gmail.com (allforest01)</managingEditor>
-            <webMaster>allforest01@gmail.com (allforest01)</webMaster><lastBuildDate>Wed, 02 Aug 2023 01:20:06 &#43;0700</lastBuildDate>
+            <webMaster>allforest01@gmail.com (allforest01)</webMaster><lastBuildDate>Mon, 07 Aug 2023 01:34:32 &#43;0700</lastBuildDate>
             <atom:link href="http://allforest01.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>[pwnable.kr] Toddlers Bottle</title>
+    <link>http://allforest01.github.io/toddlers-bottle/</link>
+    <pubDate>Mon, 07 Aug 2023 01:34:32 &#43;0700</pubDate>
+    <author>allforest01</author>
+    <guid>http://allforest01.github.io/toddlers-bottle/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>SecurityValley CTF</title>
+    <link>http://allforest01.github.io/securityvalley-ctf/</link>
+    <pubDate>Thu, 03 Aug 2023 03:44:24 &#43;0700</pubDate>
+    <author>allforest01</author>
+    <guid>http://allforest01.github.io/securityvalley-ctf/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>How I reversing on M1</title>
+    <link>http://allforest01.github.io/how-i-reversing-on-m1/</link>
+    <pubDate>Thu, 03 Aug 2023 00:12:26 &#43;0700</pubDate>
+    <author>allforest01</author>
+    <guid>http://allforest01.github.io/how-i-reversing-on-m1/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Learning z3 with me</title>
     <link>http://allforest01.github.io/learning-z3-with-me/</link>
     <pubDate>Wed, 02 Aug 2023 01:20:06 &#43;0700</pubDate>
@@ -15,7 +39,7 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>[dreamhack.io] Basic Reversing Challenges</title>
+    <title>[dreamhack.io] Basic Reversing</title>
     <link>http://allforest01.github.io/dreamhack-basic-rev/</link>
     <pubDate>Mon, 31 Jul 2023 23:06:36 &#43;0700</pubDate>
     <author>allforest01</author>

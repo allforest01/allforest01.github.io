@@ -4,7 +4,7 @@
 <!--more-->
 
 {{< admonition quote >}}
-z3 seem like magic to me. The harder it is, the more I want to learn it.
+z3 seem like magic to me.
 {{< /admonition >}}
 
 ## What is z3
@@ -13,7 +13,7 @@ z3 seem like magic to me. The harder it is, the more I want to learn it.
 "Z3 is an efficient Satisfiability Modulo Theories (SMT) solver from Microsoft Research. Z3 is a solver for symbolic logic, a foundation for many software engineering tools. SMT solvers rely on a tight integration of specialized engines of proof. Each engine owns a piece of the global puzzle and implements specialized algorithms."
 {{< /admonition >}}
 
-## An easy examples
+## An easy example
 
 Suppose I have this crack-me, and you want to crack it. How can you do that?  
 

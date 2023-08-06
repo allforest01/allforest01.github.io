@@ -6,4 +6,4 @@
 ### Dreamhack: https://dreamhack.io/users/41917/
 ### Codeforces: https://codeforces.com/profile/PurpleWhale/
 
-{{< figure src="images/elaina.jpeg">}}
+{{< figure src="../images/about/elaina.jpeg">}}

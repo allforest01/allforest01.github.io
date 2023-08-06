@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>How I reversing on M1 - Majo no Tabitabi</title><meta name="Description" content="お元気ですか？"><meta property="og:title" content="How I reversing on M1" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://allforest01.github.io/how-i-reversing-on-m1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-03T00:12:26+07:00" />
+<meta property="article:modified_time" content="2023-08-03T00:12:26+07:00" /><meta property="og:site_name" content="魔女の旅々" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How I reversing on M1"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="魔女の旅々">
+<meta name="apple-mobile-web-app-title" content="魔女の旅々"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://allforest01.github.io/how-i-reversing-on-m1/" /><link rel="prev" href="http://allforest01.github.io/learning-z3-with-me/" /><link rel="next" href="http://allforest01.github.io/securityvalley-ctf/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How I reversing on M1",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/allforest01.github.io\/how-i-reversing-on-m1\/"
+        },"genre": "posts","keywords": "misc, reversing","wordcount":  623 ,
+        "url": "http:\/\/allforest01.github.io\/how-i-reversing-on-m1\/","datePublished": "2023-08-03T00:12:26+07:00","dateModified": "2023-08-03T00:12:26+07:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "allforest01"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Majo no Tabitabi">魔女の旅々</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> ./posts </a><a class="menu-item" href="/tags/"> ./tags </a><a class="menu-item" href="/about/"> ./about_me </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Majo no Tabitabi">魔女の旅々</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">./posts</a><a class="menu-item" href="/tags/" title="">./tags</a><a class="menu-item" href="/about/" title="">./about_me</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">How I reversing on M1</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>allforest01</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-08-03">2023-08-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;623 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#macos">MacOS</a>
+      <ul>
+        <li><a href="#x86-64">x86-64</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">I&rsquo;ve have a hard time using Macbook M1 to learn about reversing.
+Because M1 is ARM chip and I can&rsquo;t find an easy way to dynamic analyst an ELF file.
+So today I will share my exprience about reversing on M1.
+For each program type, I will solve one crackme step by step as an example.</div>
+        </div>
+    </div>
+<h2 id="macos">MacOS</h2>
+<h3 id="x86-64">x86-64</h3>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Crackme: <a href="https://crackmes.one/crackme/60d3982833c5d410b8842fa5" target="_blank" rel="noopener noreffer ">https://crackmes.one/crackme/60d3982833c5d410b8842fa5</a></div>
+        </div>
+    </div>
+<p>I use zsh and ohmyzsh for main terminal, the reason i use it is because it&rsquo;s so beautiful.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="../images/setup-for-reversing-on-m1/image-0.png"
+        data-srcset="../images/setup-for-reversing-on-m1/image-0.png, ../images/setup-for-reversing-on-m1/image-0.png 1.5x, ../images/setup-for-reversing-on-m1/image-0.png 2x"
+        data-sizes="auto"
+        alt="../images/setup-for-reversing-on-m1/image-0.png"
+        title="../images/setup-for-reversing-on-m1/image-0.png" /></p>
+<p>For static analyst, I will use <code>Ghidra</code>. You can install <code>Ghidra</code> through <code>Homebrew</code>.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">If you like dark theme, you can install it through here:<br>
+<a href="https://github.com/zackelia/ghidra-dark-theme" target="_blank" rel="noopener noreffer ">https://github.com/zackelia/ghidra-dark-theme</a></div>
+        </div>
+    </div>
+<p>Let&rsquo;s run <code>Ghidra</code> by <code>ghidraRun</code> command and start analyst this crackme.</p>
+<p>Decompile at the entry:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="../images/setup-for-reversing-on-m1/image-1.png"
+        data-srcset="../images/setup-for-reversing-on-m1/image-1.png, ../images/setup-for-reversing-on-m1/image-1.png 1.5x, ../images/setup-for-reversing-on-m1/image-1.png 2x"
+        data-sizes="auto"
+        alt="../images/setup-for-reversing-on-m1/image-1.png"
+        title="../images/setup-for-reversing-on-m1/image-1.png" /></p>
+<p>We can easily see that the program read username and register code, then pass to FUN_100003cb0 to do something. So let&rsquo;s go to the <code>FUN_100003cb0</code>:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="../images/setup-for-reversing-on-m1/image-2.png"
+        data-srcset="../images/setup-for-reversing-on-m1/image-2.png, ../images/setup-for-reversing-on-m1/image-2.png 1.5x, ../images/setup-for-reversing-on-m1/image-2.png 2x"
+        data-sizes="auto"
+        alt="../images/setup-for-reversing-on-m1/image-2.png"
+        title="../images/setup-for-reversing-on-m1/image-2.png" /></p>
+<p>The <code>FUN_100003cb0</code> is not do anything important so just go back and go to <code>FUN_100003b10</code>:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="../images/setup-for-reversing-on-m1/image-3.png"
+        data-srcset="../images/setup-for-reversing-on-m1/image-3.png, ../images/setup-for-reversing-on-m1/image-3.png 1.5x, ../images/setup-for-reversing-on-m1/image-3.png 2x"
+        data-sizes="auto"
+        alt="../images/setup-for-reversing-on-m1/image-3.png"
+        title="../images/setup-for-reversing-on-m1/image-3.png" /></p>
+<p>The decompile is so terrible so i will go to the end and traceback from the end:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="../images/setup-for-reversing-on-m1/image-4.png"
+        data-srcset="../images/setup-for-reversing-on-m1/image-4.png, ../images/setup-for-reversing-on-m1/image-4.png 1.5x, ../images/setup-for-reversing-on-m1/image-4.png 2x"
+        data-sizes="auto"
+        alt="../images/setup-for-reversing-on-m1/image-4.png"
+        title="../images/setup-for-reversing-on-m1/image-4.png" /></p>
+<p>From the <code>line 24</code> to the <code>line 34</code>, we know that <code>FUN_1000039b0</code> is a print function. <code>line 32</code> will be executed and print out <code>&quot;succes!&quot;</code> only if the password is true. And <code>line 34</code> will allways be executed and print out <code>&quot;Nope. Try again :)&quot;</code>.</p>
+<p>From the <code>line 17</code> to the <code>line 23</code>, we see that <code>param_1</code>, <code>param_3</code> look like the string, and <code>param_2</code> is the lenght.
+We see that <code>param_1</code> and <code>param_3</code> is compared for only first digit.</p>
+<p>Back to <code>FUN_100003b10</code>, I will remove the lines relative to StackGuard, because it&rsquo;s doesn&rsquo;t needed for understanding what the program doing here.</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">You can read about StackGuard here:<br>
+<a href="https://www.redhat.com/en/blog/security-technologies-stack-smashing-protection-stackguard" target="_blank" rel="noopener noreffer ">https://www.redhat.com/en/blog/security-technologies-stack-smashing-protection-stackguard</a></div>
+        </div>
+    </div>
+<p>I also rewrite the code as pseudo-code to make it more clearly and understanding.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">You should copy and paste code to the ide like vscode, which can highlight everywhere the varible appear when you select any varible, so it&rsquo;s easy to rewrite the code.</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="n">local_pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">username_pos</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="p">(</span><span class="n">username_len</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">username_len</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="p">(</span><span class="n">username</span><span class="p">[</span><span class="n">username_pos</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">&#39;\0&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">local_str</span><span class="p">[</span><span class="n">local_pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">username</span><span class="p">[</span><span class="n">username_pos</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">local_pos</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">username_pos</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">username_len</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(;</span> <span class="n">local_pos</span> <span class="o">&lt;=</span> <span class="n">username_pos</span><span class="p">;</span> <span class="n">local_pos</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">local_str</span><span class="p">[</span><span class="n">local_pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">username</span><span class="p">[</span><span class="n">local_pos</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">compare</span><span class="p">(</span><span class="n">md5</span><span class="p">(</span><span class="n">local_str</span><span class="p">,</span> <span class="n">local_pos</span><span class="p">),</span> <span class="n">strlen</span><span class="p">(</span><span class="n">local_str</span><span class="p">),</span> <span class="n">register_code</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>For unknown <code>rand()</code> value, we cant generate register code like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">hashlib</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">username</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;username: &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">username_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">split_pos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">username_len</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">username_len</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">local_str</span> <span class="o">=</span> <span class="n">username</span><span class="p">[</span><span class="n">split_pos</span><span class="p">:]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">register_code</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">local_str</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">register_code_len</span> <span class="o">=</span> <span class="n">username_len</span> <span class="o">-</span> <span class="n">split_pos</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">local_str</span> <span class="o">=</span> <span class="n">username</span><span class="p">[:</span><span class="n">split_pos</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">register_code</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">local_str</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">register_code_len</span> <span class="o">=</span> <span class="n">split_pos</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">register_code</span><span class="p">[:</span><span class="n">register_code_len</span><span class="p">])</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Only one register code in generated codes is valid. The crackme is so bad because the valid register code is generate randomly after our register code is inputed. That cant be happend in reality scenario. So we need to patch this crackme to fix this problem.</p>
+<p>I will fixed the value <code>local_2c</code> to <code>0</code> by patch the line 46 from this:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="../images/setup-for-reversing-on-m1/image-5.png"
+        data-srcset="../images/setup-for-reversing-on-m1/image-5.png, ../images/setup-for-reversing-on-m1/image-5.png 1.5x, ../images/setup-for-reversing-on-m1/image-5.png 2x"
+        data-sizes="auto"
+        alt="../images/setup-for-reversing-on-m1/image-5.png"
+        title="../images/setup-for-reversing-on-m1/image-5.png" /></p>
+<p>to this (XOR EDX it self to make it equal 0):</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="../images/setup-for-reversing-on-m1/image-6.png"
+        data-srcset="../images/setup-for-reversing-on-m1/image-6.png, ../images/setup-for-reversing-on-m1/image-6.png 1.5x, ../images/setup-for-reversing-on-m1/image-6.png 2x"
+        data-sizes="auto"
+        alt="../images/setup-for-reversing-on-m1/image-6.png"
+        title="../images/setup-for-reversing-on-m1/image-6.png" /></p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">To save the patched, following the tutorial:<br>
+<a href="https://materials.rangeforce.com/tutorial/2020/04/12/Patching-Binaries/" target="_blank" rel="noopener noreffer ">https://materials.rangeforce.com/tutorial/2020/04/12/Patching-Binaries/</a></div>
+        </div>
+    </div>
+<p>So we can rewrite the resigter code generatation like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">hashlib</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">username</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;username: &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">username_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">split_pos</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">username_len</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">local_str</span> <span class="o">=</span> <span class="n">username</span><span class="p">[</span><span class="n">split_pos</span><span class="p">:]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">register_code</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">local_str</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">local_str</span> <span class="o">=</span> <span class="n">username</span><span class="p">[:</span><span class="n">split_pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">register_code</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">local_str</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;register_code: &#39;</span> <span class="o">+</span> <span class="n">register_code</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Okay we will test it:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="../images/setup-for-reversing-on-m1/image-7.png"
+        data-srcset="../images/setup-for-reversing-on-m1/image-7.png, ../images/setup-for-reversing-on-m1/image-7.png 1.5x, ../images/setup-for-reversing-on-m1/image-7.png 2x"
+        data-sizes="auto"
+        alt="../images/setup-for-reversing-on-m1/image-7.png"
+        title="../images/setup-for-reversing-on-m1/image-7.png" /></p>
+<p>[This posts is currently being updated&hellip;]</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-08-03</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/how-i-reversing-on-m1/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/misc/">misc</a>,&nbsp;<a href="/tags/reversing/">reversing</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/learning-z3-with-me/" class="prev" rel="prev" title="Learning z3 with me"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Learning z3 with me</a>
+            <a href="/securityvalley-ctf/" class="next" rel="next" title="SecurityValley CTF">SecurityValley CTF<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.115.4">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">allforest01</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

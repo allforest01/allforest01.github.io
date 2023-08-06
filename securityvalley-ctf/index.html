@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>SecurityValley CTF - Majo no Tabitabi</title><meta name="Description" content="お元気ですか？"><meta property="og:title" content="SecurityValley CTF" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://allforest01.github.io/securityvalley-ctf/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-03T03:44:24+07:00" />
+<meta property="article:modified_time" content="2023-08-03T03:44:24+07:00" /><meta property="og:site_name" content="魔女の旅々" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SecurityValley CTF"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="魔女の旅々">
+<meta name="apple-mobile-web-app-title" content="魔女の旅々"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://allforest01.github.io/securityvalley-ctf/" /><link rel="prev" href="http://allforest01.github.io/how-i-reversing-on-m1/" /><link rel="next" href="http://allforest01.github.io/toddlers-bottle/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "SecurityValley CTF",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/allforest01.github.io\/securityvalley-ctf\/"
+        },"genre": "posts","keywords": "reversing, coding","wordcount":  809 ,
+        "url": "http:\/\/allforest01.github.io\/securityvalley-ctf\/","datePublished": "2023-08-03T03:44:24+07:00","dateModified": "2023-08-03T03:44:24+07:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "allforest01"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Majo no Tabitabi">魔女の旅々</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> ./posts </a><a class="menu-item" href="/tags/"> ./tags </a><a class="menu-item" href="/about/"> ./about_me </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Majo no Tabitabi">魔女の旅々</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">./posts</a><a class="menu-item" href="/tags/" title="">./tags</a><a class="menu-item" href="/about/" title="">./about_me</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SecurityValley CTF</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>allforest01</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-08-03">2023-08-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;809 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#reversing">Reversing</a>
+      <ul>
+        <li><a href="#simple-elf">Simple ELF</a></li>
+        <li><a href="#no-statics">No statics</a></li>
+        <li><a href="#the-loader">The loader</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="reversing">Reversing</h2>
+<h3 id="simple-elf">Simple ELF</h3>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Level: 1 Score 5 Category reversing<br>
+Can you deal with dwarfs and elfs`<br>
+Link: <a href="https://github.com/SecurityValley/PublicCTFChallenges/tree/master/reversing/the_elf" target="_blank" rel="noopener noreffer ">https://github.com/SecurityValley/PublicCTFChallenges/tree/master/reversing/the_elf</a></div>
+        </div>
+    </div>
+<p>That is so easy, just look at <code>printFlag</code> function.<br>
+Disassemble with Ghidra:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">                      <span class="err">**************************************************************</span>
+</span></span><span class="line"><span class="cl">                      <span class="err">*</span>                          <span class="nf">FUNCTION</span>                          <span class="p">*</span>
+</span></span><span class="line"><span class="cl">                      <span class="err">**************************************************************</span>
+</span></span><span class="line"><span class="cl">                      <span class="nf">undefined</span> <span class="no">printFlag</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">undefined</span>         <span class="no">AL</span><span class="p">:</span><span class="mi">1</span>           <span class="err">&lt;</span><span class="no">RETURN</span><span class="err">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">undefined8</span>        <span class="no">Stack</span><span class="p">[-</span><span class="mi">0x10</span><span class="p">]:</span><span class="mi">8</span> <span class="no">local_10</span>                       <span class="no">XREF</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>    <span class="mi">0010117</span><span class="no">c</span><span class="p">(</span><span class="no">W</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                                                                                  <span class="mi">00101180</span><span class="p">(</span><span class="no">R</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">                      <span class="no">printFlag</span>                                       <span class="no">XREF</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>    <span class="no">Entry</span> <span class="no">Point</span><span class="p">(*),</span> <span class="no">main</span><span class="p">:</span><span class="mi">001011</span><span class="no">bf</span><span class="p">(</span><span class="no">c</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                                                                                  <span class="mi">001020</span><span class="no">b0</span><span class="p">,</span> <span class="mi">00102150</span><span class="p">(*)</span>  
+</span></span><span class="line"><span class="cl"><span class="mi">00101169</span> <span class="no">f3</span> <span class="mi">0</span><span class="no">f</span> <span class="mi">1</span><span class="no">e</span> <span class="no">fa</span>     <span class="no">ENDBR64</span>
+</span></span><span class="line"><span class="cl"><span class="err">0010116</span><span class="nf">d</span> <span class="mi">55</span>              <span class="no">PUSH</span>       <span class="no">RBP</span>
+</span></span><span class="line"><span class="cl"><span class="err">0010116</span><span class="nf">e</span> <span class="mi">48</span> <span class="mi">89</span> <span class="no">e5</span>        <span class="no">MOV</span>        <span class="no">RBP</span><span class="p">,</span><span class="no">RSP</span>
+</span></span><span class="line"><span class="cl"><span class="err">00101171</span> <span class="err">48</span> <span class="err">83</span> <span class="nf">ec</span> <span class="mi">10</span>     <span class="no">SUB</span>        <span class="no">RSP</span><span class="p">,</span><span class="mi">0x10</span>
+</span></span><span class="line"><span class="cl"><span class="err">00101175</span> <span class="err">48</span> <span class="err">8</span><span class="nf">d</span> <span class="mi">05</span>        <span class="no">LEA</span>        <span class="no">RAX</span><span class="p">,[</span><span class="no">s_SecVal</span><span class="err">{</span><span class="no">cr4ck1n9_15_E45y</span><span class="err">}</span><span class="no">_00102008</span><span class="p">]</span>        <span class="err">=</span> <span class="err">&#34;</span><span class="no">SecVal</span><span class="err">{</span><span class="no">cr4ck1n9_15_E45y</span><span class="err">}&#34;</span>
+</span></span><span class="line"><span class="cl">         <span class="err">8</span><span class="nf">c</span> <span class="mi">0</span><span class="no">e</span> <span class="mi">00</span> <span class="mi">00</span>
+</span></span><span class="line"><span class="cl"><span class="err">0010117</span><span class="nf">c</span> <span class="mi">48</span> <span class="mi">89</span> <span class="mi">45</span> <span class="no">f8</span>     <span class="no">MOV</span>        <span class="no">qword</span> <span class="no">ptr</span> <span class="p">[</span><span class="no">RBP</span> <span class="err">+</span> <span class="no">local_10</span><span class="p">],</span><span class="no">RAX</span><span class="err">=&gt;</span><span class="no">s_SecVal</span><span class="err">{</span><span class="no">cr4ck</span>   <span class="err">=</span> <span class="err">&#34;</span><span class="no">SecVal</span><span class="err">{</span><span class="no">cr4ck1n9_15_E45y</span><span class="err">}&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="err">00101180</span> <span class="err">48</span> <span class="err">8</span><span class="nf">b</span> <span class="mi">45</span> <span class="no">f8</span>     <span class="no">MOV</span>        <span class="no">RAX</span><span class="p">,</span><span class="no">qword</span> <span class="no">ptr</span> <span class="p">[</span><span class="no">RBP</span> <span class="err">+</span> <span class="no">local_10</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="err">00101184</span> <span class="err">0</span><span class="nf">f</span> <span class="no">b6</span> <span class="mi">00</span>        <span class="no">MOVZX</span>      <span class="no">EAX</span><span class="err">=&gt;</span><span class="no">s_SecVal</span><span class="err">{</span><span class="no">cr4ck1n9_15_E45y</span><span class="err">}</span><span class="no">_00102008</span><span class="p">,</span><span class="no">byte</span>    <span class="err">=</span> <span class="err">&#34;</span><span class="no">SecVal</span><span class="err">{</span><span class="no">cr4ck1n9_15_E45y</span><span class="err">}&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="err">00101187</span> <span class="err">0</span><span class="nf">f</span> <span class="no">be</span> <span class="no">c0</span>        <span class="no">MOVSX</span>      <span class="no">EAX</span><span class="p">,</span><span class="no">AL</span>
+</span></span><span class="line"><span class="cl"><span class="err">0010118</span><span class="nf">a</span> <span class="mi">89</span> <span class="no">c6</span>           <span class="no">MOV</span>        <span class="no">ESI</span><span class="p">,</span><span class="no">EAX</span>
+</span></span><span class="line"><span class="cl"><span class="err">0010118</span><span class="nf">c</span> <span class="mi">48</span> <span class="mi">8</span><span class="no">d</span> <span class="mi">05</span>        <span class="no">LEA</span>        <span class="no">RAX</span><span class="p">,[</span><span class="no">s_</span><span class="nv">%c_Whoops</span><span class="p">,</span><span class="no">_that_was_weird</span><span class="err">??</span><span class="no">_00102028</span><span class="p">]</span>     <span class="err">=</span> <span class="err">&#34;</span><span class="nv">%c</span> <span class="err">\</span><span class="no">nWhoops</span><span class="p">,</span> <span class="no">that</span> <span class="no">was</span> <span class="no">weird</span><span class="err">??</span>
+</span></span><span class="line"><span class="cl">         <span class="err">95</span> <span class="err">0</span><span class="nf">e</span> <span class="mi">00</span> <span class="mi">00</span>
+</span></span><span class="line"><span class="cl"><span class="err">00101193</span> <span class="err">48</span> <span class="err">89</span> <span class="nf">c7</span>        <span class="no">MOV</span>        <span class="no">RDI</span><span class="err">=&gt;</span><span class="no">s_</span><span class="nv">%c_Whoops</span><span class="p">,</span><span class="no">_that_was_weird</span><span class="err">??</span><span class="no">_00102028</span><span class="p">,</span><span class="no">RAX</span>  <span class="err">=</span> <span class="err">&#34;</span><span class="nv">%c</span> <span class="err">\</span><span class="no">nWhoops</span><span class="p">,</span> <span class="no">that</span> <span class="no">was</span> <span class="no">weird</span><span class="err">??</span>
+</span></span><span class="line"><span class="cl"><span class="err">00101196</span> <span class="nf">b8</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="no">MOV</span>        <span class="no">EAX</span><span class="p">,</span><span class="mi">0x0</span>
+</span></span><span class="line"><span class="cl">         <span class="err">00</span> <span class="err">00</span>
+</span></span><span class="line"><span class="cl"><span class="err">0010119</span><span class="nf">b</span> <span class="no">e8</span> <span class="no">d0</span> <span class="no">fe</span>        <span class="no">CALL</span>       <span class="err">&lt;</span><span class="no">EXTERNAL</span><span class="err">&gt;</span><span class="p">::</span><span class="no">printf</span>                               <span class="no">int</span> <span class="no">printf</span><span class="p">(</span><span class="no">char</span> <span class="p">*</span> <span class="no">__format</span><span class="p">,</span> <span class="no">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="nf">ff</span> <span class="no">ff</span>
+</span></span><span class="line"><span class="cl"><span class="err">001011</span><span class="nf">a0</span> <span class="mi">90</span>              <span class="no">NOP</span>
+</span></span><span class="line"><span class="cl"><span class="err">001011</span><span class="nf">a1</span> <span class="no">c9</span>              <span class="no">LEAVE</span>
+</span></span><span class="line"><span class="cl"><span class="err">001011</span><span class="nf">a2</span> <span class="no">c3</span>              <span class="no">RET</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition success open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw" aria-hidden="true"></i>Success<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Flag: SecVal{cr4ck1n9_15_E45y}</div>
+        </div>
+    </div>
+<h3 id="no-statics">No statics</h3>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Level: 1 Score 10 Category reversing<br>
+This time there is no static value inside&hellip;but you are the best. So crack it baby!<br>
+Link: <a href="https://github.com/SecurityValley/PublicCTFChallenges/tree/master/reversing/no_static" target="_blank" rel="noopener noreffer ">https://github.com/SecurityValley/PublicCTFChallenges/tree/master/reversing/no_static</a></div>
+        </div>
+    </div>
+<p>Decompile with Ghidra:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">undefined8</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">iVar1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">long</span> <span class="n">in_FS_OFFSET</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">undefined8</span> <span class="n">local_3a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">undefined</span> <span class="n">local_32</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">char</span> <span class="n">local_31</span> <span class="p">[</span><span class="mi">9</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="n">undefined8</span> <span class="n">local_28</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">undefined8</span> <span class="n">local_20</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">undefined8</span> <span class="n">local_18</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">long</span> <span class="n">local_10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">local_10</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">long</span> <span class="o">*</span><span class="p">)(</span><span class="n">in_FS_OFFSET</span> <span class="o">+</span> <span class="mh">0x28</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">puts</span><span class="p">(</span><span class="s">&#34;Again, there is something inside me!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">local_28</span> <span class="o">=</span> <span class="mh">0x5d84756a5f6c6e5c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">local_20</span> <span class="o">=</span> <span class="mh">0x683e6a60683e3a71</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">local_18</span> <span class="o">=</span> <span class="mh">0x865b3c6d7b6a51</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">local_3a</span> <span class="o">=</span> <span class="mh">0x80717e6f715f8579</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">local_32</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">puts</span><span class="p">(</span><span class="s">&#34;enter your passphrase, please!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">fgets</span><span class="p">(</span><span class="n">local_31</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">printf</span><span class="p">(</span><span class="s">&#34;try:%s ........ </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">local_31</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">prepare</span><span class="p">(</span><span class="o">&amp;</span><span class="n">local_3a</span><span class="p">,</span><span class="mh">0xc</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">local_3a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">iVar1</span> <span class="o">=</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">local_31</span><span class="p">,(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">local_3a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">iVar1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">prepare</span><span class="p">(</span><span class="o">&amp;</span><span class="n">local_28</span><span class="p">,</span><span class="mi">9</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">local_28</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">puts</span><span class="p">(</span><span class="s">&#34;WRONG!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">local_10</span> <span class="o">!=</span> <span class="o">*</span><span class="p">(</span><span class="kt">long</span> <span class="o">*</span><span class="p">)(</span><span class="n">in_FS_OFFSET</span> <span class="o">+</span> <span class="mh">0x28</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="cm">/* WARNING: Subroutine does not return */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">__stack_chk_fail</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>From the line 23, we assume that the password will have 8 chars in length.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">fgets</span><span class="p">(</span><span class="n">local_31</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>From lines 25-26, we see that the <code>local_3a</code> will be generated by <code>prepare</code> function and then be printed.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">iVar1</span> <span class="o">=</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">local_31</span><span class="p">,(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">local_3a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s </span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">local_3a</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>From lines 27-30, the <code>local_3a</code> will be compared with our password. If two strings are equal the <code>local_28</code>, may be this is the flag we want.<br>
+So just run this program and get it the flag.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="p">(</span><span class="n">debian</span><span class="o">-</span><span class="n">x86_64</span><span class="p">)</span><span class="n">parallels</span><span class="err">@</span><span class="n">debian</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="mi">11</span><span class="o">:~/</span><span class="n">Desktop</span><span class="err">$</span> <span class="p">.</span><span class="o">/</span><span class="n">crackme</span><span class="o">-</span><span class="mo">02</span>
+</span></span><span class="line"><span class="cl"><span class="n">Again</span><span class="p">,</span> <span class="n">there</span> <span class="n">is</span> <span class="n">something</span> <span class="n">inside</span> <span class="n">me</span><span class="o">!</span>
+</span></span><span class="line"><span class="cl"><span class="n">enter</span> <span class="n">your</span> <span class="n">passphrase</span><span class="p">,</span> <span class="n">please</span><span class="o">!</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="o">:</span><span class="n">a</span>
+</span></span><span class="line"><span class="cl"> <span class="p">........</span> 
+</span></span><span class="line"><span class="cl"><span class="n">mySecret</span> 
+</span></span><span class="line"><span class="cl"><span class="n">WRONG</span><span class="o">!</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">debian</span><span class="o">-</span><span class="n">x86_64</span><span class="p">)</span><span class="n">parallels</span><span class="err">@</span><span class="n">debian</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="mi">11</span><span class="o">:~/</span><span class="n">Desktop</span><span class="err">$</span> <span class="p">.</span><span class="o">/</span><span class="n">crackme</span><span class="o">-</span><span class="mo">02</span>
+</span></span><span class="line"><span class="cl"><span class="n">Again</span><span class="p">,</span> <span class="n">there</span> <span class="n">is</span> <span class="n">something</span> <span class="n">inside</span> <span class="n">me</span><span class="o">!</span>
+</span></span><span class="line"><span class="cl"><span class="n">enter</span> <span class="n">your</span> <span class="n">passphrase</span><span class="p">,</span> <span class="n">please</span><span class="o">!</span>
+</span></span><span class="line"><span class="cl"><span class="n">mySecret</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="o">:</span><span class="n">mySecret</span> <span class="p">........</span> 
+</span></span><span class="line"><span class="cl"><span class="n">mySecret</span> 
+</span></span><span class="line"><span class="cl"><span class="n">SecVal</span><span class="p">{</span><span class="n">Th15_Wa5_Hard3R</span><span class="p">}</span> 
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">debian</span><span class="o">-</span><span class="n">x86_64</span><span class="p">)</span><span class="n">parallels</span><span class="err">@</span><span class="n">debian</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="mi">11</span><span class="o">:~/</span><span class="n">Desktop</span><span class="err">$</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition success open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw" aria-hidden="true"></i>Success<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Flag: SecVal{Th15_Wa5_Hard3R}</div>
+        </div>
+    </div>
+<h3 id="the-loader">The loader</h3>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Level: 3 Score 30 Category reversing<br>
+I&rsquo;ve seen that in malware before. There must be something inside<br>
+Link: <a href="https://github.com/SecurityValley/PublicCTFChallenges/tree/master/reversing/the_loader" target="_blank" rel="noopener noreffer ">https://github.com/SecurityValley/PublicCTFChallenges/tree/master/reversing/the_loader</a></div>
+        </div>
+    </div>
+<p>For this problem, it&rsquo;s easier to solve with dynamic analyst. First let decompile that:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="n">__noreturn</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">envp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">Hop</span><span class="p">;</span> <span class="c1">// rax
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">v4</span><span class="p">;</span> <span class="c1">// [rsp+Ch] [rbp-14h] BYREF
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">void</span> <span class="o">*</span><span class="n">v5</span><span class="p">;</span> <span class="c1">// [rsp+10h] [rbp-10h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">unsigned</span> <span class="kr">__int64</span> <span class="n">v6</span><span class="p">;</span> <span class="c1">// [rsp+18h] [rbp-8h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="n">v6</span> <span class="o">=</span> <span class="n">__readfsqword</span><span class="p">(</span><span class="mh">0x28u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">v5</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">unk_2018</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">v4</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">adjustCounter</span><span class="p">(</span><span class="o">&amp;</span><span class="n">v4</span><span class="p">,</span> <span class="n">argv</span><span class="p">,</span> <span class="n">envp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Hop</span> <span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">getHop</span><span class="p">(</span><span class="n">v4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">argv</span> <span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="p">)</span><span class="n">v4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d.%s </span><span class="se">\n\n</span><span class="s">Wouldn&#39;t it be cool to be able to look into the memory?</span><span class="se">\n\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">v4</span><span class="p">,</span> <span class="n">Hop</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">huuu</span><span class="p">(</span><span class="n">v5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">++</span><span class="n">v4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sleep</span><span class="p">(</span><span class="mi">1u</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Look like the problem is in <code>huuu()</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">huuu</span><span class="p">(</span><span class="kr">__int64</span> <span class="n">a1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">__int64</span> <span class="n">str_size</span><span class="p">;</span> <span class="c1">// rax
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">__int64</span> <span class="n">s_mem</span><span class="p">;</span> <span class="c1">// [rsp+18h] [rbp-8h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="n">s_mem</span> <span class="o">=</span> <span class="n">load_s_mem</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="mi">254LL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">str_size</span> <span class="o">=</span> <span class="n">get_str_size</span><span class="p">(</span><span class="n">s_mem</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">unload_mem</span><span class="p">(</span><span class="n">s_mem</span><span class="p">,</span> <span class="n">str_size</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Maybe this function load an unload the flag, so let&rsquo;s set a breakpoint at the load_s_mem and view the memory.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="hl"><span class="lnt">13
+</span></span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="o">*</span><span class="kr">__fastcall</span> <span class="nf">load_s_mem</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">a1</span><span class="p">,</span> <span class="kt">char</span> <span class="n">a2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [rsp+1Ch] [rbp-14h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">unsigned</span> <span class="kr">__int64</span> <span class="n">size</span><span class="p">;</span> <span class="c1">// [rsp+20h] [rbp-10h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">void</span> <span class="o">*</span><span class="n">dest</span><span class="p">;</span> <span class="c1">// [rsp+28h] [rbp-8h]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="n">size</span> <span class="o">=</span> <span class="n">get_str_size</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">dest</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">memcpy</span><span class="p">(</span><span class="n">dest</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="p">((</span><span class="n">_BYTE</span> <span class="o">*</span><span class="p">)</span><span class="n">dest</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">^=</span> <span class="n">a2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">*</span><span class="p">((</span><span class="n">_BYTE</span> <span class="o">*</span><span class="p">)</span><span class="n">dest</span> <span class="o">+</span> <span class="n">size</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl">  <span class="k">return</span> <span class="n">dest</span><span class="p">;</span> <span class="c1">// &lt;- set a breakpoint here
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>[This posts is currently being updated&hellip;]</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-08-03</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/securityvalley-ctf/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/reversing/">reversing</a>,&nbsp;<a href="/tags/coding/">coding</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/how-i-reversing-on-m1/" class="prev" rel="prev" title="How I reversing on M1"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>How I reversing on M1</a>
+            <a href="/toddlers-bottle/" class="next" rel="next" title="[pwnable.kr] Toddlers Bottle">[pwnable.kr] Toddlers Bottle<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.115.4">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">allforest01</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
